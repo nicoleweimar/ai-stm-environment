@@ -1,0 +1,24 @@
+name: ai-stm
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - scipy
+  - pandas
+  # image processing / CV
+  - opencv
+  - scikit-image
+  - pillow
+  # preprocessing + RANSAC plane fit 
+  - scikit-learn
+  # utilities
+  - matplotlib
+  - tqdm
+  - pyyaml
+  - natsort
+  # pip-only extras
+  - pip:
+      - pypng
+      - packaging

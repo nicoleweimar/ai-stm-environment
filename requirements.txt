@@ -1,0 +1,22 @@
+numpy
+scipy
+pandas
+# Image processing / CV (assessment module)
+opencv-python
+scikit-image
+Pillow
+# Preprocessing / RANSAC plane fitting
+scikit-learn
+# Utilities
+matplotlib
+tqdm
+PyYAML
+natsort
+# Misc
+pypng
+packaging
+
+# NOTE:
+# PyTorch is intentionally not included here.
+# Install separately depending on hardware:
+#   pip install torch torchvision torchaudio
