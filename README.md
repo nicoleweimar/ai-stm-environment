@@ -1,10 +1,11 @@
 # AI STM - Environment Setup 
 
 ## Table of Contents
-* [Introduction](#intro)
-* [Environment Prerequisites](#Environment Prerequisites)
-* [Installation](#install)
-* [Environment Verification](#environmentverify)
+## Table of Contents
+* [Introduction](#introduction)
+* [Environment Prerequisites](#environment-prerequisites)
+* [Installation](#installation)
+* [Environment Verification](#environment-verification)
 
 ## Introduction
 This environment targets Ubuntu-based Linux systems and is intended to be GPU-enabled once a CUDA-capable PyTorch build is installed. The current
@@ -17,7 +18,7 @@ setup is designed to run on CPU-only systems as well. Once Ubuntu/GPU access is 
 This project assumes a working Conda installation. For setup instructions, see: [link](https://docs.conda.io/en/latest/miniconda.html)
 
 ## Installation
-This project uses **Conda** for environment management. The environment definition is provided in 'environment.yml'.
+This project uses **Conda** for environment management. The environment definition is provided in 'environment.yml'. Clone this repository and follow the steps below to create the Conda environment.
 
 To create the Environment: 
 ```bash
