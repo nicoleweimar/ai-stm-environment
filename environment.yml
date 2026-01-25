@@ -2,7 +2,7 @@ name: ai-stm
 channels:
   - conda-forge
 dependencies:
-  - python=3.10
+  - python=3.10.19 #pytorch compatable 
   - pip
   - numpy
   - scipy
