@@ -9,7 +9,7 @@
 
 ## Introduction
 This environment targets Ubuntu-based Linux systems and is intended to be GPU-enabled once a CUDA-capable PyTorch build is installed. The current
-setup is designed to run on CPU-only systems as well. Once Ubuntu/GPU access is available, the setup procedure below will be executed as is and all version numbers and dependency resolutions will be finalized.
+setup is designed to run on CPU-only systems as well. Once Ubuntu/GPU access is available, the setup procedure below will be executed as is and all version numbers and dependency resolutions will be finalized. 
 
 ## Environment Prerequisites
 - A Unix-like operating system (Ubuntu 20.04+ for GPU execution)
@@ -32,9 +32,11 @@ conda env update -f environment.yml -n ai-stm --prune
 
 PyTorch is installed separately because the correct build depends on OS and (for Linux) the target CUDA version.
 
-Local development (CPU-only)
+## Local development (CPU-only)
 
-For local, CPU-only environments (e.g. macOS, Windows, or Linux without CUDA):
+PyTorch is installed via Conda on CPU-only systems to avoid runtime conflicts, Note: Do not install PyTorch seperately, or OpenMP runtime conflicts will occur. 
+For local, CPU-only environments:
+
 ```bash
 conda install -y pytorch
 ```
