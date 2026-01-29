@@ -6,6 +6,7 @@
 * [Environment Prerequisites](#environment-prerequisites)
 * [Installation](#installation)
 * [Environment Verification](#environment-verification)
+* [Assessment Pipeline Validation](#assessment-pipeline-validation)
 
 ## Introduction
 This environment targets Ubuntu-based Linux systems and is intended to be GPU-enabled once a CUDA-capable PyTorch build is installed. The current
@@ -53,3 +54,19 @@ python verify/verify_cuda.py
 ```
 On local CPU-only environment, CUDA available: False is expected. 
 
+## Assessment Pipeline Validation
+
+This repository currently includes a minimal **assessment pipeline validation** to verify that the machine learning stack is correctly configured and executable. This can be run on local machine and reports GPU/CUDA availability, running on CPU when unavailable. 
+
+The validation script:
+- Uses a minimal CNN implemented in **PyTorch**
+- Confirms CPU/GPU device selection and CUDA visibility (when available)
+- Runs a forward pass and backward pass to ensure end-to-end training capability
+
+This validation is **infrastructure-focused** and does not represent the finalized assessment model.  
+The original DeepSPM reference implementation uses TensorFlow; here, PyTorch is used for modern CUDA/cloud compatibility and rapid iteration. The assessment architecture will be finalized once the dataset and training strategy are selected.
+
+Run the validation
+```bash
+python assessment/scripts/validate_cnn_pipeline.py
+```

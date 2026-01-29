@@ -16,7 +16,5 @@ natsort
 pypng
 packaging
 
-# NOTE:
+# Note:
 # PyTorch is intentionally not included here.
-# Install separately depending on hardware:
-#   pip install torch torchvision torchaudio
