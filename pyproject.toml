@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-stm-environment"
+version = "0.1.0"
+description = "AI-assisted STM environment verification and assessment utilities."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+ai-stm-verify = "verify.verify_cuda:main"
+ai-stm-validate = "assessment.scripts.validate_cnn_pipeline:main"
+ai-stm-check = "setup.check:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["verify*", "assessment*", "setup*"]
+

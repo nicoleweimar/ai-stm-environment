@@ -3,29 +3,29 @@ import platform
 import sys
 import time
 
-import torch
-import torch.nn as nn
 
-class TinyCNN(nn.Module):
-    """Basic CNN used only for environment validation."""
-    def __init__(self, in_channels: int = 1, num_classes: int = 4):
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.Conv2d(in_channels, 16, 3, padding=1),
-            nn.ReLU(),
-            nn.MaxPool2d(2),
-            nn.Conv2d(16, 32, 3, padding=1),
-            nn.ReLU(),
-            nn.AdaptiveAvgPool2d((1, 1)),
-            nn.Flatten(),
-            nn.Linear(32, num_classes),
-        )
+def main(): 
+    import torch
+    import torch.nn as nn
 
-    def forward(self, x):
-        return self.net(x)
+    class TinyCNN(nn.Module):
+        """Basic CNN used only for environment validation."""
+        def __init__(self, in_channels: int = 1, num_classes: int = 4):
+            super().__init__()
+            self.net = nn.Sequential(
+                nn.Conv2d(in_channels, 16, 3, padding=1),
+                nn.ReLU(),
+                nn.MaxPool2d(2),
+                nn.Conv2d(16, 32, 3, padding=1),
+                nn.ReLU(),
+                nn.AdaptiveAvgPool2d((1, 1)),
+                nn.Flatten(),
+                nn.Linear(32, num_classes),
+            )
 
+        def forward(self, x):
+            return self.net(x)
 
-def main():
     parser = argparse.ArgumentParser(description="CNN validation test (CPU/GPU)")
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--image-size", type=int, default=128)
@@ -73,7 +73,6 @@ def main():
     print(f"Output shape: {tuple(y.shape)}")
     print(f"Avg forward time: {(end - start) / args.steps:.6f} sec")
 
-    # Backward pass check
     model.train()
     x2 = torch.randn_like(x)
     y2 = model(x2)
@@ -81,7 +80,8 @@ def main():
     loss.backward()
     print("Backward pass: OK")
     print("Validation test completed successfully")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
