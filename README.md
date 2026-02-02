@@ -1,12 +1,12 @@
 # AI STM - Environment Setup 
 
 ## Table of Contents
-## Table of Contents
 * [Introduction](#introduction)
 * [Environment Prerequisites](#environment-prerequisites)
-* [Installation](#installation)
-* [Environment Verification](#environment-verification)
-* [Assessment Pipeline Validation](#assessment-pipeline-validation)
+* [Easy Installation](#easy-installation)
+* [(Optional) Multi-Step Installation](#installation)
+* [(Optional) Environment Verification](#environment-verification)
+* [(Optional) Assessment Pipeline Validation](#assessment-pipeline-validation)
 
 ## Introduction
 The setup supports CPU-only execution on local machines and is designed to transition cleanly to GPU-enabled execution on Ubuntu systems with NVIDIA GPUs once CUDA-capable hardware is available. GPU-specific dependency versions (e.g., CUDA and PyTorch builds) will be finalized after confirming the target hardware configuration. 
@@ -17,8 +17,18 @@ The setup supports CPU-only execution on local machines and is designed to trans
 - Python (managed via Conda, no system Python installation required)
 This project assumes a working Conda installation. For setup instructions, see: [link](https://docs.conda.io/en/latest/miniconda.html)
 
+## Easy Installation
+This project uses **Conda** for environment management. The environment definition is provided in 'environment.base.yml'. Clone this repository and paste the commands below at the file root, to create the Conda environment. This is the recommended installation path for most users.
+
+```bash
+conda env create -f environment.base.yml
+conda activate ai-stm
+python -m pip install -e .
+ai-stm-check
+```
+
 ## Installation
-This project uses **Conda** for environment management. The environment definition is provided in 'environment.base.yml'. Clone this repository and follow the steps below to create the Conda environment.
+The below installation steps are provided for users who prefer a more explicit and manual setup process. The following steps are equivalent to the Easy Installation. 
 
 To create the Environment: 
 ```bash
