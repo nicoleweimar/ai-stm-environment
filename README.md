@@ -9,7 +9,7 @@
 * [(Optional) Assessment Pipeline Validation](#assessment-pipeline-validation)
 
 ## Introduction
-The setup supports CPU-only execution on local machines and is designed to transition cleanly to GPU-enabled execution on Ubuntu systems with NVIDIA GPUs once CUDA-capable hardware is available. GPU-specific dependency versions (e.g., CUDA and PyTorch builds) will be finalized after confirming the target hardware configuration. 
+The setup supports CPU-only execution on local machines and is designed to transition cleanly to GPU-enabled execution on Ubuntu systems with NVIDIA GPUs once CUDA-capable hardware is available. GPU-specific dependency versions (e.g., CUDA and PyTorch builds) will be finalized after confirming the target hardware configuration. Notes: Data and Models are not included in this repository.
 
 ## Environment Prerequisites
 - A Unix-like operating system (Ubuntu 20.04+ for GPU execution)
